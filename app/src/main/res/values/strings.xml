@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SampleLib</string>
+    <string name="disaply_dialog">Display</string>
+</resources>
