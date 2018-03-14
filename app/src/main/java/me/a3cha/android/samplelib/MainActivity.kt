@@ -3,10 +3,10 @@ package me.a3cha.android.samplelib
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import me.a3cha.android.smartprogressdialog.SmartProgressDialog
+import me.a3cha.android.smartprogressdialog.SmartProgressDialogFragment
 
 class MainActivity : AppCompatActivity() {
-    private val progressDialog: SmartProgressDialog by lazy { SmartProgressDialog.Builder().setMessage("Loading jaa...").build() }
+    private val progressDialog: SmartProgressDialogFragment by lazy { SmartProgressDialogFragment.Builder().setMessage("Loading...").build() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +17,5 @@ class MainActivity : AppCompatActivity() {
                 progressDialog.show(supportFragmentManager, "dialog")
             }
         }
-    }
-
-    override fun onDestroy() {
-        if (progressDialog.isVisible) {
-            progressDialog.dismiss()
-        }
-        super.onDestroy()
     }
 }

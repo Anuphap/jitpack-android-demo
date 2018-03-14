@@ -7,19 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.dialog_progress.view.*
 
+
 /**
  * Created by Anuphap Suwannamas on 13/3/2018 AD.
  * Email: Anupharpae@gmail.com
  */
 
-class SmartProgressDialog : DialogFragment() {
+class SmartProgressDialogFragment : DialogFragment() {
     private var message: String? = null
 
     companion object {
         private const val ARG_MESSAGE = "arg_message"
 
-        fun newInstance(message: String?): SmartProgressDialog {
-            val fragment = SmartProgressDialog()
+        fun newInstance(message: String?): SmartProgressDialogFragment {
+            val fragment = SmartProgressDialogFragment()
             val bundle = Bundle()
             bundle.putString(ARG_MESSAGE, message)
             fragment.arguments = bundle
@@ -34,6 +35,13 @@ class SmartProgressDialog : DialogFragment() {
         } else {
             retrieveInstanceState(savedInstanceState)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val windowParams = dialog.window.attributes
+        windowParams.dimAmount = 0.0f
+        dialog.window.attributes = windowParams
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -51,6 +59,7 @@ class SmartProgressDialog : DialogFragment() {
     }
 
     private fun setupView(rootView: View) {
+        dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
         message?.let { rootView.tvMessage.text = it }
     }
 
@@ -70,7 +79,7 @@ class SmartProgressDialog : DialogFragment() {
             return this
         }
 
-        fun build(): SmartProgressDialog {
+        fun build(): SmartProgressDialogFragment {
             return newInstance(message)
         }
     }

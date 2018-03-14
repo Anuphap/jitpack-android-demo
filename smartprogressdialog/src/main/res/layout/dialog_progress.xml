@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="@dimen/dialog_min_width"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/alpha_background"
+    android:background="@drawable/bg_black_conner"
+    android:minHeight="@dimen/dialog_min_width"
     android:minWidth="@dimen/dialog_min_width"
     android:padding="@dimen/padding_margin_smaill">
 
@@ -11,16 +12,22 @@
         android:id="@+id/progressbar"
         android:layout_width="@dimen/default_progressbar"
         android:layout_height="@dimen/default_progressbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvMessage"
+        style="@style/Base.TextAppearance.AppCompat.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_smaill"
         android:text="@string/loading"
-        app:layout_constraintBottom_toBottomOf="@+id/progressbar"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressbar" />
+        app:layout_constraintTop_toBottomOf="@id/progressbar" />
 
 </android.support.constraint.ConstraintLayout>

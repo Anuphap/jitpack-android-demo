@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="dialog_min_width">192dp</dimen>
-    <dimen name="default_progressbar">32dp</dimen>
+    <dimen name="dialog_min_width">152dp</dimen>
+    <dimen name="default_progressbar">48dp</dimen>
     <dimen name="padding_margin_smaill">8dp</dimen>
+    <dimen name="dialog_min_height">125dp</dimen>
 </resources>
